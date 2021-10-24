@@ -39,7 +39,7 @@ contract MyEpicGame is ERC721, ERC721Enumerable {
 
     BigScaryBoss public bigScaryBoss;
 
-    CharacterAttributes[] public characterAttributes;
+    CharacterAttributes[] characterAttributes;
 
     mapping(uint256 => CharacterAttributes) public nftHolderAttributes;
     mapping(address => uint256) public ownerOfTokenId;
@@ -152,6 +152,14 @@ contract MyEpicGame is ERC721, ERC721Enumerable {
         );
 
         return output;
+    }
+
+    function fetchAllMintableNFTs()
+        external
+        view
+        returns (CharacterAttributes[] memory)
+    {
+        return characterAttributes;
     }
 
     function mintCharacterNFT(uint256 _characterIndex) external {
