@@ -4,6 +4,7 @@ import twitterLogo from './assets/twitter-logo.svg'
 import './App.css'
 import SelectCharacter from './Components/SelectCharacter'
 import Arena from './Components/Arena'
+import LoadingIndicator from './Components/LoadingIndicator'
 import { CONTRACT_ADDRESS, transformCharacterData } from './constants'
 import { abi as EPICGAMEABI } from './artifacts/contracts/MyEpicGame.sol/MyEpicGame.json'
 
@@ -21,6 +22,10 @@ const App = () => {
 	 * Right under current account, setup this new state property
 	 */
 	const [characterNFT, setCharacterNFT] = useState(null)
+	/*
+	 * New state property added here
+	 */
+	const [isLoading, setIsLoading] = useState(false)
 
 	/*
 	 * Start by creating a new action that we will run on component load
@@ -116,6 +121,8 @@ const App = () => {
 			} else {
 				console.log('No character NFT found!')
 			}
+
+			setIsLoading(false)
 		}
 
 		/*
@@ -129,6 +136,9 @@ const App = () => {
 
 	// Render Methods
 	const renderContent = () => {
+		if (isLoading) {
+			return <LoadingIndicator />
+		}
 		/*
 		 * Scenario #1
 		 */
@@ -166,6 +176,7 @@ const App = () => {
 	 * This runs our function when the page loads.
 	 */
 	useEffect(() => {
+		setIsLoading(true)
 		checkIfWalletIsConnected()
 	}, [])
 
