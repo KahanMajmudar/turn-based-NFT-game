@@ -38,21 +38,14 @@ async function main() {
 	console.log('Game Contract deployed to:', gameContract.address)
 	// 0x4e3fab0dad77db15657a77268aaf1f94e4457490
 
-	// await gameContract.mintCharacterNFT(0)
-	// await gameContract.mintCharacterNFT(1)
-	// await gameContract.mintCharacterNFT(2)
-	await gameContract.mintCharacterNFT(3)
-	// await gameContract.mintCharacterNFT(4)
+	let txn = await gameContract.mintCharacterNFT(3)
+	await txn.wait()
 
-	let returnedTokenUri = await gameContract.tokenURI(1)
-	// let tokenOwneData = await gameContract.balanceOf(owner.address)
-	console.log('Token URI:', returnedTokenUri)
-	// console.log('Token Data:', tokenOwneData)
-	await gameContract.attackBoss()
-	await gameContract.attackBoss()
-	await gameContract.attackBoss()
-	await gameContract.attackBoss()
-	await gameContract.attackBoss()
+	txn = await gameContract.attackBoss()
+	await txn.wait()
+
+	txn = await gameContract.attackBoss()
+	await txn.wait()
 }
 
 // We recommend this pattern to be able to use async/await everywhere
