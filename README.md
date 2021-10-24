@@ -1,15 +1,26 @@
-# Basic Sample Hardhat Project
+# Turn Based NFT Game
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+## To run the blockchain project
 
-Try running some of the following tasks:
+1. Clone the repo
+2. `cd hardhat`
+3. `npm i`
+4. `npx hardhat run scripts/run.js` to test locally
+5. create a .env file and add the following values
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
 ```
+   ALCHEMY_API_KEY
+   ACCOUNT_PRIVATE_KEY
+```
+
+6. `npx hardhat run scripts/deploy.js --network rinkeby` to deploy on the testnet
+
+## To run the react app
+
+1. `cd react-app`
+2. copy the artifacts from hardhat/artifacts to react-app/src/artifacts
+3. `npm i`
+4. Replace the contract address in `constants.js`
+5. `npm run start`
+
+### Enjoy Playing 🔥
