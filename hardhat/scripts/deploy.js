@@ -19,16 +19,16 @@ async function main() {
 	const gameContract = await GameContract.deploy(
 		['Charizard', 'Mewtwo', 'Pikachu', 'Eevee', 'Gyarados'],
 		[
-			'https://comicvine.gamespot.com/a/uploads/scale_medium/11/114183/5198637-006charizard.png',
-			'https://comicvine.gamespot.com/a/uploads/original/11/114183/5200790-150mewtwo.png',
-			'https://comicvine.gamespot.com/a/uploads/original/11/114183/5198796-025pikachu.png',
-			'https://comicvine.gamespot.com/a/uploads/original/11/114183/5198663-133eevee.png',
-			'https://comicvine.gamespot.com/a/uploads/original/11/114183/5198702-130gyarados.png',
+			'QmR53ZFoF83UUs4cU1P32BQtnadcaCCAaTs2xhAEWTU34C/5198641-006charizard-mega_y.png',
+			'QmR53ZFoF83UUs4cU1P32BQtnadcaCCAaTs2xhAEWTU34C/5200790-150mewtwo.png',
+			'QmR53ZFoF83UUs4cU1P32BQtnadcaCCAaTs2xhAEWTU34C/5198796-025pikachu.png',
+			'QmR53ZFoF83UUs4cU1P32BQtnadcaCCAaTs2xhAEWTU34C/5198663-133eevee.png',
+			'QmR53ZFoF83UUs4cU1P32BQtnadcaCCAaTs2xhAEWTU34C/5198702-130gyarados.png',
 		],
 		[360, 416, 430, 435, 640],
 		[215, 254, 135, 150, 200],
 		'Omegamon',
-		'https://comicvine1.cbsistatic.com/uploads/original/14/146991/6152683-4777835526-Omega.jpg',
+		'QmR53ZFoF83UUs4cU1P32BQtnadcaCCAaTs2xhAEWTU34C/6152683-4777835526-Omega.jpg',
 		'12000',
 		'175'
 	)
@@ -37,15 +37,6 @@ async function main() {
 
 	console.log('Game Contract deployed to:', gameContract.address)
 	// 0x4e3fab0dad77db15657a77268aaf1f94e4457490
-
-	let txn = await gameContract.mintCharacterNFT(3)
-	await txn.wait()
-
-	txn = await gameContract.attackBoss()
-	await txn.wait()
-
-	txn = await gameContract.attackBoss()
-	await txn.wait()
 }
 
 // We recommend this pattern to be able to use async/await everywhere

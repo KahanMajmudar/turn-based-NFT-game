@@ -1,4 +1,4 @@
-const CONTRACT_ADDRESS = '0xBCA88811B32D5947A3F8a04cc0Fc1c1ADb46f6E7'
+const CONTRACT_ADDRESS = '0xB1199F8008E27C2AC382E7EB7416cf21CF3d2945'
 
 /*
  * Add this method and make sure to export it on the bottom!
@@ -6,7 +6,7 @@ const CONTRACT_ADDRESS = '0xBCA88811B32D5947A3F8a04cc0Fc1c1ADb46f6E7'
 const transformCharacterData = (characterData) => {
 	return {
 		name: characterData.name,
-		imageURI: characterData.imageURI,
+		imageURI: `https://cloudflare-ipfs.com/ipfs/${characterData.imageURI}`,
 		hp: characterData.hp.toNumber(),
 		maxHp: characterData.maxHp.toNumber(),
 		attackDamage: characterData.attackDamage.toNumber(),
