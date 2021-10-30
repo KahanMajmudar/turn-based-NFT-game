@@ -24,3 +24,6 @@
 5. `npm run start`
 
 ### Enjoy Playing 🔥
+
+
+[Click](https://opensea.io/assets/matic/0x3CD266509D127d0Eac42f4474F57D0526804b44e/1846) to view project completion NFT
